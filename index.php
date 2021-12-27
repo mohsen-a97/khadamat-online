@@ -76,7 +76,7 @@ if (isset($_GET['logout'])) {
         </button>
         <ul class="dropdown-menu bg-black" aria-labelledby="dropdownMenuButton1">
           <li>
-            <form action="">
+            <form action="index.php" method="post">
               <input type="submit" value="خدمات درخواست شده" name="list_services" />
             </form>
           </li>

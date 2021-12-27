@@ -29,3 +29,14 @@ function createAutoClosingAlert(selector, delay) {
   }, delay);
 }
 createAutoClosingAlert(".alert-message", 3000);
+
+if (document.querySelector("#modal_services")) {
+  const modal = document.querySelector("#modal_services");
+  const btn_close = document.querySelectorAll(".close");
+  btn_close.forEach((cur) =>
+    cur.addEventListener("click", () => {
+      modal.classList.remove("d-block");
+      modal.remove();
+    })
+  );
+}
