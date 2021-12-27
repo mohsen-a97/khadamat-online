@@ -47,3 +47,11 @@ header h1 {
     font-size: 3.5rem;
   }
 }
+#about_img {
+  width: 100%;
+  height: auto;
+}
+section {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
