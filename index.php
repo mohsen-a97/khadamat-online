@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+if (isset($_SESSION['username'])) {
+  $username = $_SESSION['username'];
+}
+?>
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 
@@ -19,10 +26,21 @@
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
   <script src="https://unpkg.com/persian-date@latest/dist/persian-date.min.js"></script>
   <script src="https://unpkg.com/persian-datepicker@latest/dist/js/persian-datepicker.min.js"></script>
+  <!-- scripts js -->
+  <script src="js/scripts.js" defer></script>
   <title>khadamat online</title>
 </head>
 
 <body id="page-top">
+  <!-- notification message -->
+  <?php if (isset($_SESSION['success'])) : ?>
+    <div class="success alert alert-success alert-dismissible alert-message ">
+      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+      <p><?php echo $_SESSION['success'];
+          unset($_SESSION['success']) ?>
+      </p>
+    </div>
+  <?php endif ?>
   <!-- navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
     <div class="container px-4 px-lg-5">
@@ -55,7 +73,7 @@
             </form>
           </li>
           <li>
-            <a class="dropdown-item" href="#">خروج</a>
+            <a class="dropdown-item" href="index.php?logout='1'">خروج</a>
           </li>
         </ul>
       </div>

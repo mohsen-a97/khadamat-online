@@ -61,3 +61,22 @@ section {
 .datepicker {
   width: 80px;
 }
+.error {
+  margin: 0px auto;
+  border: 1px solid #a94442;
+  color: #a94442;
+  background: #f2dede;
+  border-radius: 5px;
+  text-align: right;
+}
+.success {
+  color: #3c763d;
+  background: #dff0d8;
+  border: 1px solid #3c763d;
+  margin-bottom: 20px;
+}
+.alert {
+  position: absolute !important;
+  top: 50%;
+  right: 40%;
+}
