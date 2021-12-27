@@ -4,6 +4,11 @@ session_start();
 if (isset($_SESSION['username'])) {
   $username = $_SESSION['username'];
 }
+if (isset($_GET['logout'])) {
+  session_destroy();
+  unset($_SESSION['username']);
+  header("location: index.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
@@ -32,6 +37,7 @@ if (isset($_SESSION['username'])) {
 </head>
 
 <body id="page-top">
+  <span id="log" data-log="<?php echo $username ?>"></span>
   <!-- notification message -->
   <?php if (isset($_SESSION['success'])) : ?>
     <div class="success alert alert-success alert-dismissible alert-message ">
@@ -64,7 +70,7 @@ if (isset($_SESSION['username'])) {
       <a href="login.php" class="btn text-white-75" id="btn_login">ورود/ثبت نام</a>
       <div class="dropdown" id="btn_profile">
         <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-          پروفایل
+          <?php echo $_SESSION['username'] ?>
         </button>
         <ul class="dropdown-menu bg-black" aria-labelledby="dropdownMenuButton1">
           <li>
