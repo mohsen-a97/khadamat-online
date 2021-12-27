@@ -10,6 +10,7 @@ if (isset($_GET['logout'])) {
   header("location: index.php");
 }
 ?>
+<?php include('reg_service.php') ?>
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 
@@ -39,6 +40,7 @@ if (isset($_GET['logout'])) {
 <body id="page-top">
   <span id="log" data-log="<?php echo $username ?>"></span>
   <!-- notification message -->
+  <?php include('errors.php'); ?>
   <?php if (isset($_SESSION['success'])) : ?>
     <div class="success alert alert-success alert-dismissible alert-message ">
       <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
@@ -134,6 +136,7 @@ if (isset($_GET['logout'])) {
       </div>
     </div>
   </section>
+  <!-- services -->
   <section id="services" class="container">
     <h5 id="services_warning" class="text-center">
       برای ارسال درخواست وارد سایت شوید
@@ -147,7 +150,7 @@ if (isset($_GET['logout'])) {
 
               <div class="card-body">
                 <h5 class="card-title">تاسیسات و لوله کشی</h5>
-                <form action="">
+                <form action="index.php" method="POST">
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="لوله کشی آب و گاز و فاضلاب" id="s11" name="services[]" />
                     <label class="form-check-label" for="s11">
@@ -187,7 +190,7 @@ if (isset($_GET['logout'])) {
 
               <div class="card-body">
                 <h5 class="card-title">سرمایش و گرمایش</h5>
-                <form action="">
+                <form action="index.php" method="POST">
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="نصب و سرویس کولر آبی" id="s21" name="services[]" />
                     <label class="form-check-label" for="s21">
@@ -213,7 +216,7 @@ if (isset($_GET['logout'])) {
                     </label>
                   </div>
                   <label for="date">تاریخ</label>
-                  <input type="text" name="date" id="date" class="datepicker" />
+                  <input type="text" name="date" id="date" class="datepicker" required />
                   <button class="w-100 btn btn-primary btn-lg my-4 btn_services" type="submit" name="reg_service">
                     ارسال درخواست
                   </button>
@@ -227,7 +230,7 @@ if (isset($_GET['logout'])) {
 
               <div class="card-body">
                 <h5 class="card-title">شستشو</h5>
-                <form action="">
+                <form action="index.php" method="POST">
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="نظافت منزل و محل کار" id="s31" name="services[]" />
                     <label class="form-check-label" for="s31">
@@ -253,7 +256,7 @@ if (isset($_GET['logout'])) {
                     </label>
                   </div>
                   <label for="date">تاریخ</label>
-                  <input type="text" name="date" id="date" class="datepicker" />
+                  <input type="text" name="date" id="date" class="datepicker" required />
                   <button class="w-100 btn btn-primary btn-lg my-4 btn_services" type="submit" name="reg_service">
                     ارسال درخواست
                   </button>
@@ -267,7 +270,7 @@ if (isset($_GET['logout'])) {
 
               <div class="card-body">
                 <h5 class="card-title">خدمات برقی</h5>
-                <form action="">
+                <form action="index.php" method="POST">
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="سیم کشی و برق کاری" id="s41" name="services[]" />
                     <label class="form-check-label" for="s41">
@@ -291,7 +294,7 @@ if (isset($_GET['logout'])) {
                     </label>
                   </div>
                   <label for="date">تاریخ</label>
-                  <input type="text" name="date" id="date" class="datepicker" />
+                  <input type="text" name="date" id="date" class="datepicker" required />
                   <button class="w-100 btn btn-primary btn-lg my-4 btn_services" type="submit" name="reg_service">
                     ارسال درخواست
                   </button>
@@ -305,7 +308,7 @@ if (isset($_GET['logout'])) {
 
               <div class="card-body">
                 <h5 class="card-title">لوازم خانگی و اداری</h5>
-                <form action="">
+                <form action="index.php" method="POST">
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="نصب و تعمیر یخچال" id="s51" name="services[]" />
                     <label class="form-check-label" for="s51">
@@ -331,7 +334,7 @@ if (isset($_GET['logout'])) {
                     </label>
                   </div>
                   <label for="date">تاریخ</label>
-                  <input type="text" name="date" id="date" class="datepicker" />
+                  <input type="text" name="date" id="date" class="datepicker" required />
                   <button class="w-100 btn btn-primary btn-lg my-4 btn_services" type="submit" name="reg_service">
                     ارسال درخواست
                   </button>
@@ -345,7 +348,7 @@ if (isset($_GET['logout'])) {
 
               <div class="card-body">
                 <h5 class="card-title">خدمات ساختمانی</h5>
-                <form action="">
+                <form action="index.php" method="POST">
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="بنایی" id="s61" name="services[]" />
                     <label class="form-check-label" for="s61"> بنایی </label>
@@ -369,7 +372,7 @@ if (isset($_GET['logout'])) {
                     </label>
                   </div>
                   <label for="date">تاریخ</label>
-                  <input type="text" name="date" id="date" class="datepicker" />
+                  <input type="text" name="date" id="date" class="datepicker" required />
                   <button class="w-100 btn btn-primary btn-lg my-4 btn_services" type="submit" name="reg_service">
                     ارسال درخواست
                   </button>
@@ -383,7 +386,7 @@ if (isset($_GET['logout'])) {
 
               <div class="card-body">
                 <h5 class="card-title">خدمات خودرو</h5>
-                <form action="">
+                <form action="index.php" method="POST">
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="کارواش" id="s71" name="services[]" />
                     <label class="form-check-label" for="s71"> کارواش </label>
@@ -405,7 +408,7 @@ if (isset($_GET['logout'])) {
                     <label class="form-check-label" for="s74"> باتری </label>
                   </div>
                   <label for="date">تاریخ</label>
-                  <input type="text" name="date" id="date" class="datepicker" />
+                  <input type="text" name="date" id="date" class="datepicker" required />
                   <button class="w-100 btn btn-primary btn-lg my-4 btn_services" type="submit" name="reg_service">
                     ارسال درخواست
                   </button>
@@ -419,7 +422,7 @@ if (isset($_GET['logout'])) {
 
               <div class="card-body">
                 <h5 class="card-title">خدمات خانگی</h5>
-                <form action="">
+                <form action="index.php" method="POST">
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="قفل و کلیدسازی" id="s81" name="services[]" />
                     <label class="form-check-label" for="s81">
@@ -443,7 +446,7 @@ if (isset($_GET['logout'])) {
                     </label>
                   </div>
                   <label for="date">تاریخ</label>
-                  <input type="text" name="date" id="date" class="datepicker" />
+                  <input type="text" name="date" id="date" class="datepicker" required />
                   <button class="w-100 btn btn-primary btn-lg my-4 btn_services" type="submit" name="reg_service">
                     ارسال درخواست
                   </button>
@@ -457,7 +460,7 @@ if (isset($_GET['logout'])) {
 
               <div class="card-body">
                 <h5 class="card-title">خدمات حمل و نقل</h5>
-                <form action="">
+                <form action="index.php" method="POST">
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="اسباب کشی" id="s91" name="services[]" />
                     <label class="form-check-label" for="s91">
@@ -471,7 +474,7 @@ if (isset($_GET['logout'])) {
                     </label>
                   </div>
                   <label for="date">تاریخ</label>
-                  <input type="text" name="date" id="date" class="datepicker" />
+                  <input type="text" name="date" id="date" class="datepicker" required />
                   <button class="w-100 btn btn-primary btn-lg my-4 btn_services" type="submit" name="reg_service">
                     ارسال درخواست
                   </button>
@@ -523,6 +526,9 @@ if (isset($_GET['logout'])) {
       observer: true,
       format: "YYYY/MM/DD",
     });
+    if (window.history.replaceState) {
+      window.history.replaceState(null, null, window.location.href);
+    }
   </script>
 </body>
 
