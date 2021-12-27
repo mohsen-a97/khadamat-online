@@ -55,3 +55,9 @@ section {
   padding-top: 6rem;
   padding-bottom: 6rem;
 }
+.img-fluid {
+  height: 13rem;
+}
+.datepicker {
+  width: 80px;
+}
